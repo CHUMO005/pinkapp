@@ -8,10 +8,10 @@ class ReminderPage extends StatefulWidget {
 
 class _ReminderPageState extends State<ReminderPage> {
   final List<String> healthReminders = [
-    '💧 Drink Water',
-    '🏃‍♂️ Go for a Walk',
-    '🥗 Eat a Balanced Meal',
-    '🛏️ Sleep Early',
+    ' Drink Water',
+    ' Go for a Walk',
+    'Eat a Balanced Meal,eat healthy pal!',
+    ' Sleep Early',
   ];
 
   final List<String> userNotes = [];
@@ -30,6 +30,8 @@ class _ReminderPageState extends State<ReminderPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.pink,
+
       appBar: AppBar(title: Text('Health Reminder & Notes')),
       body: Padding(
         padding: EdgeInsets.all(16),

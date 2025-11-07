@@ -15,12 +15,12 @@ class _BmipageState extends State<Bmipage> {
   String _message = '';
 
   void _calculateBMI() {
-    final double? weight = double.tryParse(_weightController.text);
-    final double? height = double.tryParse(_heightController.text);
+    final double? weight = double.tryParse(_weightController.text.trim());
+    final double? height = double.tryParse(_heightController.text.trim());
 
-    if (weight == null || height == null || height == 0) {
+    if (weight == null || height == null || height <= 0) {
       setState(() {
-        _message = 'Please enter valid values';
+        _message = 'Please enter valid weight and height values.';
         _bmi = null;
       });
       return;
@@ -36,9 +36,9 @@ class _BmipageState extends State<Bmipage> {
       } else if (bmi < 24.9) {
         _message = 'Normal weight';
       } else if (bmi < 29.9) {
-        _message = 'Overweight'; // corrected from 'Obese'
+        _message = 'Overweight';
       } else {
-        _message = 'Obese'; // Added missing range
+        _message = 'Obese';
       }
     });
   }
@@ -46,8 +46,12 @@ class _BmipageState extends State<Bmipage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('BMI Calculator')),
-      body: Padding(
+      backgroundColor: Colors.pink[50],
+      appBar: AppBar(
+        title: const Text('BMI Calculator'),
+        backgroundColor: Colors.pink,
+      ),
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
@@ -71,6 +75,7 @@ class _BmipageState extends State<Bmipage> {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: _calculateBMI,
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.pink),
               child: const Text('Calculate BMI'),
             ),
             const SizedBox(height: 20),
@@ -78,13 +83,19 @@ class _BmipageState extends State<Bmipage> {
               Text(
                 'Your BMI is: ${_bmi!.toStringAsFixed(1)}',
                 style: const TextStyle(
-                  fontSize: 20,
+                  fontSize: 22,
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              const SizedBox(height: 8),
               Text(
                 _message,
-                style: const TextStyle(fontSize: 18, color: Colors.black),
+                style: const TextStyle(fontSize: 18, color: Colors.black87),
+              ),
+            ] else ...[
+              Text(
+                _message,
+                style: const TextStyle(fontSize: 16, color: Colors.red),
               ),
             ],
           ],

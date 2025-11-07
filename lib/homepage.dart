@@ -35,7 +35,7 @@ class Homepage extends StatelessWidget {
               .start, // Align children to the start of the column.
           children: [
             _upperText(), // Greeting section.
-            _middleScreenButtons(context), // Grid menu section.
+            _lowerScreenButtons(context), // Grid menu section.
           ],
         ),
       ),
@@ -43,7 +43,7 @@ class Homepage extends StatelessWidget {
   }
 
   // Grid Menu Section
-  Widget _middleScreenButtons(BuildContext context) {
+  Widget _lowerScreenButtons(BuildContext context) {
     return Expanded(
       child: GridView.count(
         crossAxisCount: 3, // Number of columns in the grid.
@@ -128,7 +128,7 @@ Widget _upperText() {
         Text(
           'Welcome Here',
           style: TextStyle(
-            fontSize: 22,
+            fontSize: 30,
             fontWeight: FontWeight.bold,
             color: Colors.white,
           ),

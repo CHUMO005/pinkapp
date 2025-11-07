@@ -16,6 +16,7 @@ class _CycleTrackerState extends State<CycleTracker> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.pink,
       appBar: AppBar(title: Text('Cycle Tracker')),
       body: Column(
         children: [
