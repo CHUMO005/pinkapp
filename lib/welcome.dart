@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pink_app/homepage.dart';
+import 'homepage.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -41,7 +41,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                             ),
                             TextSpan(
                               text:
-                                  'Here is your Pinky Pal to guide you!\nKaribu here 💖',
+                                  'Here is your Pinky Pal to guide you!\nKaribu here ',
                               style: TextStyle(
                                 fontSize: 27.0,
                                 color: Color.fromARGB(179, 23, 23, 23),
@@ -55,7 +55,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   const SizedBox(height: 40),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/home');
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => 
+                      const Homepage()));
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.lightBlueAccent,

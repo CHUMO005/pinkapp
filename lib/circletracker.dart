@@ -8,10 +8,10 @@ class CycleTracker extends StatefulWidget {
 }
 
 class _CycleTrackerState extends State<CycleTracker> {
-  CalendarFormat _calendarFormat = CalendarFormat.month;
+  final CalendarFormat _calendarFormat = CalendarFormat.month;
   DateTime _focusedDay = DateTime.now();
   DateTime? _selectedDay;
-  List<DateTime> _periodDates = [];
+  final List<DateTime> _periodDates = [];
 
   @override
   Widget build(BuildContext context) {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Bmipage extends StatefulWidget {
-  const Bmipage({Key? key}) : super(key: key);
+  const Bmipage({super.key});
 
   @override
   State<Bmipage> createState() => _BmipageState();
